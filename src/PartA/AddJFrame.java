@@ -7,7 +7,7 @@ package PartA;
 import PartA.*;
 /**
  *
- * @author user
+ * @author Leong Tzee Yang
  */
 public class AddJFrame extends javax.swing.JFrame {
 
