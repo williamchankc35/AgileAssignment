@@ -424,13 +424,13 @@ public class Login extends javax.swing.JFrame {
         else{
         JOptionPane.showMessageDialog(Login,"Welcome!"+tmpAcc);
               
-              jtfResID.setEnabled(false);
+              jtfResID.setEditable(false);
               jtfResID.setText(AffID[tmp]);
-              jtfResName.setEnabled(false);
+              jtfResName.setEditable(false);
               jtfResName.setText(AffName[tmp]);
-              jtfResLoc.setEnabled(false);
+              jtfResLoc.setEditable(false);
               jtfResLoc.setText(AffAdd[tmp]);
-              jtfResOwner.setEnabled(false);
+              jtfResOwner.setEditable(false);
               jtfResOwner.setText(OwnerName[tmp]);
               jPanel2.setVisible(true);
               jPanel4.setVisible(true);
@@ -452,7 +452,10 @@ public class Login extends javax.swing.JFrame {
         Description =Menu.getDescription();
         Priority = Menu.getPriority();
         ID = Menu.getID();
-        
+        jtfFoodID.setEditable(false);
+        jtfFoodName.setEditable(false);
+        jtfPrice.setEditable(false);
+        jtfDescription.setEditable(false);
        String SelectedFID =  jComboBox1.getSelectedItem().toString();
        
         for(int i =0 ; i< FoodID.length ; i ++ ){
@@ -461,7 +464,7 @@ public class Login extends javax.swing.JFrame {
             jtfFoodName.setText(FoodName[i]);
             jtfPrice.setText(Price[i]);
             jtfDescription.setText(Description[i]);
-            
+           
             }
                                                            
     }//GEN-LAST:event_jComboBox1ActionPerformed
