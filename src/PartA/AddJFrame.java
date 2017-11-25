@@ -167,7 +167,7 @@ public class AddJFrame extends javax.swing.JFrame {
     private void jbtBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtBackActionPerformed
         // TODO add your handling code here:
         dispose();
-        Menu menu =  new Menu();
+       
     }//GEN-LAST:event_jbtBackActionPerformed
 
     /**
