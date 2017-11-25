@@ -238,6 +238,11 @@ public class Login extends javax.swing.JFrame {
         );
 
         Create.setText("Create");
+        Create.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreateActionPerformed(evt);
+            }
+        });
 
         Update.setText("Update");
 
@@ -486,6 +491,12 @@ public class Login extends javax.swing.JFrame {
         jtfPrice.setText(null);
         jtfDescription.setText(null);
     }//GEN-LAST:event_LogoutActionPerformed
+
+    private void CreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateActionPerformed
+        // TODO add your handling code here:
+        
+        new AddJFrame().setVisible(true);
+    }//GEN-LAST:event_CreateActionPerformed
 
     /**
      * @param args the command line arguments

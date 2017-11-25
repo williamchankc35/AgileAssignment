@@ -5,12 +5,23 @@
  */
 package PartA;
 import PartA.*;
+import PartA.Array.MD;
+import PartA.GS.Menu;
 /**
  *
  * @author Leong Tzee Yang
  */
 public class AddJFrame extends javax.swing.JFrame {
-
+ //MD
+    private MD Menu = new MD();
+    private String[] FoodID;
+    private String[] FoodName;
+    private String[] Price;
+    private String[] Description;
+    private int[] Priority;
+    private String[] ID;
+    private String[] MenuArrayList;
+    private Menu list2 = new Menu();
     /**
      * Creates new form AddJFrame
      */
@@ -27,6 +38,7 @@ public class AddJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jComboBox2 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -38,10 +50,18 @@ public class AddJFrame extends javax.swing.JFrame {
         jbtAdd = new javax.swing.JButton();
         jbtReset = new javax.swing.JButton();
         jbtBack = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jtfFoodID = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jtfAffID = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        Search = new javax.swing.JButton();
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Add");
+        jLabel1.setText("Create");
 
         jLabel2.setText("Food Name");
 
@@ -76,60 +96,111 @@ public class AddJFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setText("Food ID");
+
+        jtfFoodID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfFoodIDActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Affiliates ID");
+
+        jtfAffID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfAffIDActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
+        Search.setText("Search");
+        Search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(110, 110, 110)
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(jtfAffID)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Search))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
-                                .addGap(51, 51, 51)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel3))
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addComponent(jLabel5))
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jtfPrice)
-                                    .addComponent(jtfFoodName)
-                                    .addComponent(jtfDescription)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(jbtAdd)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                                .addComponent(jbtReset)
-                                .addGap(51, 51, 51)
-                                .addComponent(jbtBack)))))
-                .addGap(56, 56, 56))
+                                    .addComponent(jtfDescription)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jbtAdd)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                                        .addComponent(jbtReset)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jbtBack))
+                                    .addComponent(jtfFoodName, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jtfFoodID))))
+                        .addGap(56, 56, 56))))
+            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(15, 15, 15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jtfFoodName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel6)
+                    .addComponent(jtfAffID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Search))
+                .addGap(18, 18, 18)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jtfFoodID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfFoodName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jtfPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jtfDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtAdd)
                     .addComponent(jbtReset)
                     .addComponent(jbtBack))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -154,21 +225,66 @@ public class AddJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfPriceActionPerformed
 
     private void jbtAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtAddActionPerformed
-        // TODO add your handling code here:
+        FoodID = Menu.getFoodID();
+        FoodName = Menu.getFoodName();
+        Price = Menu.getPrice();
+        Description =Menu.getDescription();
+        Priority = Menu.getPriority();
+        ID = Menu.getID();
+        
+     jComboBox1.addItem("ID:"+jtfFoodID.getText()+"|Name:"+jtfFoodName.getText()+"|Price:"+jtfPrice.getText()+"|Description:"+jtfDescription.getText());    
+        
     }//GEN-LAST:event_jbtAddActionPerformed
 
     private void jbtResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtResetActionPerformed
         // TODO add your handling code here:
+        jtfFoodID.setText(null);
         jtfFoodName.setText(null);
         jtfPrice.setText(null);
         jtfDescription.setText(null);
+        jtfAffID.setText(null);
+       jComboBox1.removeAllItems();
     }//GEN-LAST:event_jbtResetActionPerformed
 
     private void jbtBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtBackActionPerformed
         // TODO add your handling code here:
+        
         dispose();
        
     }//GEN-LAST:event_jbtBackActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jtfAffIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfAffIDActionPerformed
+
+        // TODO add your handling code here:
+   
+        
+    }//GEN-LAST:event_jtfAffIDActionPerformed
+
+    private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
+        // TODO add your handling code here:
+         FoodID = Menu.getFoodID();
+         FoodName = Menu.getFoodName();
+         Price = Menu.getPrice();
+         Description =Menu.getDescription();
+         Priority = Menu.getPriority();
+         ID = Menu.getID();
+        
+             
+             for(int k=0; k<ID.length;k++){
+             if(jtfAffID.getText().equals(ID[k])){
+              
+jComboBox1.addItem("ID:"+FoodID[k]+"|Name:"+FoodName[k]+"|Price:"+Price[k]+"|Description:"+Description[k]);       
+             }           
+             }
+    }//GEN-LAST:event_SearchActionPerformed
+
+    private void jtfFoodIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfFoodIDActionPerformed
+             
+    }//GEN-LAST:event_jtfFoodIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,15 +323,22 @@ public class AddJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Search;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbtAdd;
     private javax.swing.JButton jbtBack;
     private javax.swing.JButton jbtReset;
+    private javax.swing.JTextField jtfAffID;
     private javax.swing.JTextField jtfDescription;
+    private javax.swing.JTextField jtfFoodID;
     private javax.swing.JTextField jtfFoodName;
     private javax.swing.JTextField jtfPrice;
     // End of variables declaration//GEN-END:variables
