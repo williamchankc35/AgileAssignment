@@ -15,15 +15,17 @@ public class Menu {
     private String Price;
     private String Description;
     private int Priority;   
+    private String ID;
     public Menu(){
     }
     
-    public Menu(String FoodID, String FoodName, String Price, String Description,int Priority) {
+    public Menu(String FoodID, String FoodName, String Price, String Description,int Priority,String ID) {
         this.FoodID = FoodID;
         this.FoodName = FoodName;
         this.Price = Price;
         this.Description = Description;
-        this.Priority= Priority;       
+        this.Priority= Priority;  
+        this.ID = ID;
     }
 
     public String getFoodID() {
@@ -44,5 +46,8 @@ public class Menu {
 
     public int getPriority() {
         return Priority;
+    }
+    public String getID(){
+    return ID;
     }
 }  

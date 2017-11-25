@@ -16,7 +16,7 @@ public class AD {
     public AD(){
     AffArrayList = AffDetail();
     }
-    
+//ARRAY 
     public Affiliates[] AffDetail(){
       Affiliates[] AffArrayList ={ 
           new Affiliates("A001","1234","Thai Food","Setapak","03-95438866","SawadeCap"),
@@ -26,7 +26,7 @@ public class AD {
       return AffArrayList;
     
     }
-    
+   //Get Data 
     public String[] getAffID(){
      String[] AffID = new String[AffArrayList.length];
         for (int i = 0; i < AffArrayList.length; ++i) {
@@ -40,5 +40,26 @@ public class AD {
             AffPass[i] = AffArrayList[i].getResPass();
         }
         return AffPass;
+    }
+     public String[] getAffName(){
+    String[] AffName = new String[AffArrayList.length];
+        for (int i = 0; i < AffArrayList.length; ++i) {
+            AffName[i] = AffArrayList[i].getResName();
+        }
+        return AffName;
+    }
+     public String[] getAffAdd(){
+    String[] AffAdd= new String[AffArrayList.length];
+        for (int i = 0; i < AffArrayList.length; ++i) {
+            AffAdd[i] = AffArrayList[i].getResAdd();
+        }
+        return AffAdd;
+    }
+     public String[] getOwnerName(){
+    String[] OwnerName = new String[AffArrayList.length];
+        for (int i = 0; i < AffArrayList.length; ++i) {
+            OwnerName[i] = AffArrayList[i].getResOwner();
+        }
+        return OwnerName;
     }
 }
