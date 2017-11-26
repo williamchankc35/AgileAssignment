@@ -19,9 +19,15 @@ public class MD {
  //ARRAY   
     public Menu[] MenuItem(){
       Menu[] MenuArrayList ={ 
-          new Menu("F001","Rice","10.00","Promotion",1,"A001"),
-          new Menu("F002","Egg","10.00","",2,"A001"),
-          new Menu("F003","testing","testing","",3,"A002")
+          new Menu("F001","Thai Fried Rice","9.99","Promotion",5,"A001"),
+          new Menu("F002","Tom Yam Soup","12.99","",5,"A001"),
+          new Menu("F003","Green Curry Fried Rice","10.99","Best Choice",5,"A001"),
+          new Menu("F004","JiaoZi 10pcs","25.99","",5,"A002"),
+          new Menu("F005","Ma Po taufu","12.99","",5,"A002"),
+          new Menu("F006","Kung Pao Chicken","12.99","",5,"A002"),
+          new Menu("F007","Nasi Goreng Ayam","6.99","",5,"A003"),
+          new Menu("F008","Nasi Goreng Cedawan","6.99","",5,"A003"),
+          new Menu("F009","Nasi Goreng Ikan Masim","6.99","",5,"A003"),
       };
   
       return MenuArrayList;

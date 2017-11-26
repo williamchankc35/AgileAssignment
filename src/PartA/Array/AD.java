@@ -19,8 +19,9 @@ public class AD {
 //ARRAY 
     public Affiliates[] AffDetail(){
       Affiliates[] AffArrayList ={ 
-          new Affiliates("A001","1234","Thai Food","Setapak","03-95438866","SawadeCap"),
-          new Affiliates("A002","1234","Chinese Food","Setapak,","03-95438866","Tony Leong")             
+          new Affiliates("A001","1234","Thai Food","Setapak","03-95438866","Raymond Wong"),
+          new Affiliates("A002","1234","Chinese Food","Setapak,","03-4322222","Albert"),
+          new Affiliates("A003","1234","Curry House","Setapak","03-8888888","Viji")
       };
   
       return AffArrayList;
