@@ -34,13 +34,12 @@ public class TaskCJFrame extends javax.swing.JFrame {
     private String[] ID;
     private String[] MenuArrayList;
     private Menu list2 = new Menu();
-    
 
     public TaskCJFrame() {
         initComponents();
         AffID = Aff.getAffID();
         AffName = Aff.getAffName();
-        
+
         FoodID = Menu.getFoodID();
         FoodName = Menu.getFoodName();
         Price = Menu.getPrice();
@@ -85,6 +84,11 @@ public class TaskCJFrame extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButton1.setText("Confirm");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButton2.setText("Cancel");
@@ -178,31 +182,38 @@ public class TaskCJFrame extends javax.swing.JFrame {
         jComboBox2.removeAllItems();
         int res;
         res = jComboBox1.getSelectedIndex();
-        for(int i=0; i<ID.length;i++){
-            if(AffID[res].equals(ID[i])){
+        for (int i = 0; i < ID.length; i++) {
+            if (AffID[res].equals(ID[i])) {
                 jComboBox2.addItem(FoodName[i]);
-                
+
             }
         }
 // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+            
+            String food = jComboBox2.getSelectedItem().toString();
+
+            for (int i = 0; i < FoodID.length; i++) {
+                if (food.equals(FoodName[i])) {
+                    jTextField1.setText(Price[i]);
+                }
+            }
         
-        String food = jComboBox2.getSelectedItem().toString();
-        
-        for(int i = 0 ; i < FoodID.length ; i++){
-        if (food.equals(FoodName[i])){
-            jTextField1.setText(Price[i]);
-        }
-    }
-        
+
 // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    
+        JOptionPane.showConfirmDialog(null, "Do you want to make this order?\nRestaurant:"+jComboBox1.getSelectedItem().toString()+"\nFood:"+jComboBox2.getSelectedItem().toString()+"\nPrice:"+jTextField1.getText()+"\nQuantity:"+jComboBox3.getSelectedItem().toString(), "Confirmation??",JOptionPane.OK_CANCEL_OPTION);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
