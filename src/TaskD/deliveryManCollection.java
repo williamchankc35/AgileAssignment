@@ -5,6 +5,12 @@
  */
 package TaskD;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.Timer;
+
 /**
  *
  * @author Chew
@@ -14,7 +20,7 @@ public class deliveryManCollection {
     
     public deliveryManCollection(){
         info = collectInfo();
-    }
+    }    
     
     public deliveryMan[] collectInfo(){
         deliveryMan[] info ={new deliveryMan("Peter Tan","911121-08-6541","Male","016-3345789","XXX","A1234"),
@@ -25,12 +31,67 @@ public class deliveryManCollection {
         return info;
     }
     
+    public String[] getdeliveryManName(){
+        String[] name = new String[info.length];
+        for (int i = 0; i < info.length; ++i) {
+            name[i] = info[i].getName();
+        }
+        return name;
+    }
+    
+    public String[] getdeliveryManGender(){
+        String[] gender = new String[info.length];
+        for (int i = 0; i < info.length; ++i) {
+            gender[i] = info[i].getGender();
+        }
+        return gender;
+    }
+    public String[] getdeliveryManHp(){
+        String[] hp = new String[info.length];
+        for (int i = 0; i < info.length; ++i) {
+            hp[i] = info[i].getPhoneNo();
+        }
+        return hp;
+    }
+    public String[] getdeliveryManAddress(){
+        String[] addrs = new String[info.length];
+        for (int i = 0; i < info.length; ++i) {
+            addrs[i] = info[i].getAddress();
+        }
+        return addrs;
+    }
+    
     public String[] getdeliveryManId() {
         String[] ID = new String[info.length];
         for (int i = 0; i < info.length; ++i) {
             ID[i] = info[i].getid();
         }
         return ID;
+    }
+    
+    public String ShowDate(){
+        Date d = new Date();
+        SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
+        return sf.format(d);
+    }
+    
+//    public String ShowTime(){
+//        new Timer(0, new ActionListener() {
+//        
+//            public void actionPerformed(ActionEvent e){
+//                Date d = new Date();
+//                SimpleDateFormat sf = new SimpleDateFormat("hh:mm:ss");
+//            }
+//        }
+//        ).start();
+//        return sf.format(d);
+//    }
+   
+    public String toString(int index) {
+        
+        return "Name : " +info[index].getName()+ 
+               "\nContact No: " +info[index].getPhoneNo()+
+               "\nGendder: " + info[index].getGender()+"\n";
     }
 
     /*public deliveryMan get(int index) {
