@@ -6,6 +6,7 @@
 package PartB;
 
 import PartB.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author user
@@ -298,6 +299,8 @@ public class AddJFrame extends javax.swing.JFrame {
         jLabel15.setText("Address:"+jtfAddress1.getText()+jtfAddress2.getText()+jtfAddress3.getText());
         jLabel16.setText("Email:"+jtfEmail.getText());
         jLabel17.setText("Contact No.:"+jtfContactNo1.getText()+jtfContactNo2.getText());
+        
+        JOptionPane.showMessageDialog(rootPane,"Add Successful");
     }//GEN-LAST:event_jbtAddActionPerformed
 
     private void jtfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfNameActionPerformed
@@ -317,6 +320,14 @@ public class AddJFrame extends javax.swing.JFrame {
         jtfEmail.setText(null);
         jtfContactNo1.setText(null);
         jtfContactNo2.setText(null);
+        
+        jLabel11.setText(null);
+        jLabel12.setText(null);
+        jLabel13.setText(null);
+        jLabel14.setText(null);
+        jLabel15.setText(null);
+        jLabel16.setText(null);
+        jLabel17.setText(null);   
     }//GEN-LAST:event_jbtResetActionPerformed
 
     private void jbtCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtCancelActionPerformed
