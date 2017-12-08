@@ -53,4 +53,31 @@ public class Menu {
     public String getID(){
         return ID;
     }
+
+    public void setFoodID(String FoodID) {
+        this.FoodID = FoodID;
+    }
+
+    public void setFoodName(String FoodName) {
+        this.FoodName = FoodName;
+    }
+
+    public void setPrice(String Price) {
+        this.Price = Price;
+    }
+
+    public void setDescription(String Description) {
+        this.Description = Description;
+    }
+
+    public void setPriority(int Priority) {
+        this.Priority = Priority;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+   
+   
 }

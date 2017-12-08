@@ -12,12 +12,11 @@ import PartA.GS.*;
  */
 public class MD {
     private Menu[] MenuArrayList;
-    
-    public MD(){
+        public MD(){
     MenuArrayList = MenuItem();
     }
  //ARRAY   
-    public Menu[] MenuItem(){
+public Menu[] MenuItem(){
       Menu[] MenuArrayList ={ 
           new Menu("F001","Thai Fried Rice","9.99","Promotion",5,"A001"),
           new Menu("F002","Tom Yam Soup","12.99","",5,"A001"),
@@ -33,6 +32,7 @@ public class MD {
       return MenuArrayList;
     
     }
+    //get Data
 public String[] getFoodID(){
      String[] FoodID = new String[MenuArrayList.length];
         for (int i = 0; i < MenuArrayList.length; ++i) {
@@ -76,4 +76,6 @@ public String[] getID(){
         }
         return ID;
     }
+
+//Create Data
 }
