@@ -13,7 +13,7 @@ public class ArrayList {
     private DeliverymanGS[] DMArrayList;
     
     public ArrayList(){
-        DMArrayList = ArrayItem()
+        DMArrayList = ArrayItem();
     }
     public DeliverymanGS[] ArrayItem(){
       DeliverymanGS[] DMArrayList ={
