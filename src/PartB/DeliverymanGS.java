@@ -21,7 +21,7 @@ public class DeliverymanGS {
     private String DMAddress3;
     private String DMEmail;
     private String DMContactNo1;
-    private String DMContactNo2;
+    private String DMContactNo2
     
     public DeliverymanGS(String DMName, String DMAge, String DMGender, String DMIC1, String DMIC2, String DMIC3, String DMAddress1, String DMAddress2, String DMAddress3, String DMEmail, String DMContactNo1, String DMContactNo2){
      this.DMName = DMName;
