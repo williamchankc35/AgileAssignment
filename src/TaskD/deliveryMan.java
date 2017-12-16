@@ -14,18 +14,18 @@ public class deliveryMan {
     private String IC;
     private String gender;
     private String phoneNo;
-    private String address;
+    private String state;
     private String id;
     
     public deliveryMan(){
     }
     
-    public deliveryMan(String name, String IC, String gender, String phoneNo, String address,String id) {
+    public deliveryMan(String name, String IC, String gender, String phoneNo, String state,String id) {
         this.name = name;
         this.IC = IC;
         this.gender = gender;
         this.phoneNo = phoneNo;
-        this.address = address;
+        this.state = state;
         this.id = id;
     }
 
@@ -45,8 +45,12 @@ public class deliveryMan {
         return phoneNo;
     }
 
-    public String getAddress() {
-        return address;
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
     public String getid() {
         return id;

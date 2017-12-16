@@ -28,9 +28,10 @@ public class ClockIn extends javax.swing.JFrame {
     }
 
     private deliveryManCollection dlvMan = new deliveryManCollection();
+    private deliveryMan list = new deliveryMan();
     private String[] ID;
     private String[] info;
-    private deliveryMan list = new deliveryMan();
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
